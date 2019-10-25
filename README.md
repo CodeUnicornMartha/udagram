@@ -10,6 +10,9 @@ A basic Ionic client web application which consumes the RestAPI Backend. [Covere
 
 ## Tasks
 
+## Beanstalk URL filtered Image
+http://udagramsplitthoffdev.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg
+
 ### Setup Node Environment
 
 You'll need to create a new node server. Open a new terminal within the project directory and run:
