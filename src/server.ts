@@ -15,15 +15,16 @@ import { runInNewContext } from 'vm';
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
-
+  // Elastic Beanstalk URL - 
+  // http://udagramsplitthoffdev.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // https://stackoverflow.com/questions/4783924/validating-url-query-string-in-node-js
   // https://hub.udacity.com/rooms/community:nd9990:840125-project-606/community:thread-10421493297-1227644?contextType=room
   // https://expressjs.com/en/api.html#res.sendFile
-  //https://stackoverflow.com/questions/14417592/node-js-difference-between-req-query-and-req-params
+  // https://stackoverflow.com/questions/14417592/node-js-difference-between-req-query-and-req-params
   // https://basarat.gitbooks.io/typescript/docs/promise.html
-  //https://stackoverflow.com/questions/37675331/using-res-send-for-sending-the-response-in-nodejs
-  //https://wanago.io/2018/12/03/typescript-express-tutorial-routing-controllers-middleware/
+  // https://stackoverflow.com/questions/37675331/using-res-send-for-sending-the-response-in-nodejs
+  // https://wanago.io/2018/12/03/typescript-express-tutorial-routing-controllers-middleware/
   app.get( "/filteredimage", (req, res) => {
   
     // ?image_url=
@@ -39,7 +40,7 @@ import { runInNewContext } from 'vm';
 
       const filteredimagePromise = filterImageFromURL(image_url);
       
-      //then as promise syntax
+      // then as promise syntax
       filteredimagePromise.then((filteredpath : string) => {
         // send the resulting file in the response
         res.status(200)
