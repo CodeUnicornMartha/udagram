@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
+    "clean": "@powershell rm -force -recurse www/",
+    "build": "npm run clean && tsc && @powershell Copy-Item \"package.json\" -Destination \"www/package.json\" && @powershell mkdir -Force www/tmp/ && @powershell Compress-Archive -Force -LiteralPath ./ -Destination www/Archive.zip"
   },
   "repository": {
     "type": "git",
